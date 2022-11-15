@@ -275,6 +275,19 @@
 	flick("summary_selfdes",screen) //???
 	special()
 
+/datum/cinematic/sm_eject
+	id = CINEMATIC_SM_EJECT
+
+/datum/cinematic/sm_eject/content()
+	cinematic_sound(sound('sound/effects/eject_warning.ogg'))
+	flick("intro_sm_ejection",screen)
+	sleep(65)
+	flick("sm_ejection_station",screen)
+	sleep(35)
+	cinematic_sound(sound('sound/effects/explosion_distant.ogg'))
+	flick("station_rumble",screen)
+	sleep(5)
+
 /* Intended usage.
 Nuke.Explosion()
 	-> Cinematic(NUKE_BOOM,world)
